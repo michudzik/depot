@@ -24,31 +24,26 @@ class ProductTest < ActiveSupport::TestCase
 	test "title should be present" do
 		@product.title = "    "
 		assert @product.invalid?
-		assert_equal @product.errors[:title], ["can't be blank"]
 	end
 
 	test "description should be present" do
 		@product.description = "    "
 		assert @product.invalid?
-		assert_equal @product.errors[:description], ["can't be blank"]
 	end
 
 	test "image url should be present" do
 		@product.image_url = nil
 		assert @product.invalid?
-		assert_equal @product.errors[:image_url], ["can't be blank", "must be a URL for GIF, JPG or PNG image"]
 	end
 
 	test "price should not be negative" do
 		@product.price = -0.01
 		assert @product.invalid?
-		assert_equal @product.errors[:price], ["must be greater than or equal to 0.01"]
 	end
 
 	test "price should not be zero" do
 		@product.price = 0.00
 		assert @product.invalid?
-		assert_equal @product.errors[:price], ["must be greater than or equal to 0.01"]
 	end
 
 	test "price should be valid" do
@@ -63,7 +58,6 @@ class ProductTest < ActiveSupport::TestCase
 													image_url: 'whatever.jpg',
 													price: 30.00)
 		assert product.invalid?
-		assert_equal product.errors[:title], ["has already been taken"]
 	end
 
 	test "image_url should be valid" do
@@ -84,7 +78,6 @@ class ProductTest < ActiveSupport::TestCase
 		invalid.each do |image|
 			@product.image_url = image
 			assert @product.invalid?
-			assert_equal @product.errors[:image_url], ["must be a URL for GIF, JPG or PNG image"]
 		end
 	end
 
