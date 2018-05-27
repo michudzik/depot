@@ -3,15 +3,26 @@
   <head>
     <title>Depot</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-  	<main class='<%= controller.controller_name %>'>
-    <%= yield %>
-  </main>
-
+    <header class="main">
+      <%= image_tag 'logo.png', alt: 'The pragmatic bookshelf' %>
+      <h1><%= @page_title %></h1>
+    </header>
+    <section class="content">
+      <nav class="side_nav">
+        <ul>
+          <li><%= link_to 'Home', '#' %></li>
+          <li><%= link_to 'Questions', '#' %></li>
+          <li><%= link_to 'News', '#' %></li>
+          <li><%= link_to 'Contact', '#' %></li>
+        </ul>
+      </nav>
+      <main class='<%= controller.controller_name %>'>
+        <%= yield %>
+      </main>
+    </section>
   </body>
 </html>

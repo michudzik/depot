@@ -3,35 +3,36 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .store {
-	ul {
-		&.catalogue {
-			list-style: none;
-			padding: 0;
-			margin: 0;
-			border-top: solid 0.25em;
+  max-width: 80 em;
+  ul {
+    &.catalogue {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border-top: solid 0.25em;
 
-			li {
-				padding: 1em;
-				margin: 0;
-				border-bottom: solid thin #ddd;
+      li {
+        padding: 1em;
+        margin: 0;
+        border-bottom: solid thin #ddd;
 
-				&::after {
-					display: block;
-					clear: both;
-					content: " ";
-				}
+        &::after {
+          display: block;
+          clear: both;
+          content: " ";
+      }
 
-				img {
-					float: left;
-					padding: 1em;
-					margin-bottom: 1em;
-					margin-right: 1em;
-				}
-			}
+      img {
+        float: left;
+        padding: 1em;
+        margin-bottom: 1em;
+        margin-right: 1em;
+        }
+      }
 
-			.price {
-				font-size: 1.1em;
-			}
-		}
-	}
+      .price {
+        font-size: 1.1em;
+      }
+    }
+  }
 }

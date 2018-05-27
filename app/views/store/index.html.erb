@@ -1,23 +1,27 @@
 <% if notice %>
-	<aside id="notice">
-		<%= notice %>
-	</aside>
+  <aside id="notice">
+   <%= notice %>
+  </aside>
 <% end %>
 
 <h1>Catalogue</h1>
 <ul class="catalogue">
-	<% @products.each do |product| %>
-		<li>
-			<%= image_tag(product.image_url) %>
-			<h2>
-				<%= product.title %>
-			</h2>
-			<p>
-				<%= sanitize(product.description) %>
-			</p>
-			<div class="price">
-				<%= product.price %>
-			</div>
-		</li>
-	<% end %>
+  <% cache @products do %>
+    <% @products.each do |product| %>
+      <% cache product do %>
+        <li>
+          <%= image_tag(product.image_url) %>
+          <h2>
+            <%= product.title %>
+          </h2>
+          <p>
+            <%= sanitize(product.description) %>
+          </p>
+          <div class="price">
+            <%= number_to_pln_currency(product.price) %>
+          </div>
+        </li>
+      <% end %>
+    <% end %>
+  <% end %>
 </ul>

@@ -3,7 +3,7 @@ require 'test_helper'
 class ProductsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @product = products(:one)
-    @title = "New book"
+    @title = "New book with minimum of 10 characters"
   end
 
   test "should get index" do
