@@ -78,6 +78,17 @@ body {
   }
   main {
     padding: 0.5em;
+    .notice {
+      padding: 0;
+      margin: 0;
+      background: #282;
+      border: solid thin #882;
+      color: white;
+      font-weight: bold;
+      padding: 1em;
+      margin-bottom: 1em;
+      text-align:center;
+    }
   }
 }
 
