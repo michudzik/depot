@@ -5,6 +5,13 @@
 <% end %>
 
 <h1>Catalogue</h1>
+
+<h3>
+  <% if @counter > 5 %>
+  <%= pluralize(@counter, "visit") %>
+<% end %>
+</h3>
+
 <ul class="catalogue">
   <% cache @products do %>
     <% @products.each do |product| %>
