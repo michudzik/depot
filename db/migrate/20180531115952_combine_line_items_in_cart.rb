@@ -30,8 +30,10 @@ class CombineLineItemsInCart < ActiveRecord::Migration[5.1]
     Cart.all.each do |cart|
       # For each line item
       cart.line_items.each do |line_item|
+
         # If it's quantity is greater than 1
         if line_item.quantity > 1
+          
           # Create multiple itemsof the same product with the quantity of 1
           line_item.quantity.times do
             cart.line_items.create(product_id: line_item.product.id,
