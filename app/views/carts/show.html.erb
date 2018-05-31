@@ -1,17 +1,28 @@
-<% if notice %>
-  <aside class="notice">
-    <%= notice %>
-  </aside>
-<% end %>
-
-<h2>Cart</h2>
-<ul>
-  <% @cart.line_items.each do |line_item| %>
-    <li>
-      <%= line_item.product.title %>, &times;<%= line_item.quantity %>
-    </li>
+<article>
+  <% if notice %>
+    <aside id="notice">
+      <%= notice %>
+    </aside>
   <% end %>
-</ul>
 
-<%= link_to 'Edit', edit_cart_path(@cart) %> |
-<%= link_to 'Back', carts_path %>
+  <h2>Cart</h2>
+  <table>
+    <tbody>
+      <% @cart.line_items.each do |line_item| %>
+        <tr>
+          <td class="quantity"><%= line_item.quantity %></td>
+          <td><%= line_item.product.title %></td>
+          <td class="price"><%= number_to_pln_currency(line_item.total_price) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="2">Total:</th>
+        <td class="price"><%= number_to_pln_currency(@cart.total_price) %></td>
+      </tr>
+    </tfoot>
+  </table>
+</article>
+
+<%= button_to 'Reset cart', @cart, method: :delete, data: { confirm: 'Are you sure?' } %>
