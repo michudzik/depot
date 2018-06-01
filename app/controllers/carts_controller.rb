@@ -1,5 +1,6 @@
 class CartsController < ApplicationController
   before_action :set_cart, only: [:show, :edit, :update, :destroy]
+  before_action :check_session_id, only: [:show]
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
 
   # GET /carts
@@ -67,6 +68,13 @@ class CartsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_cart
       @cart = Cart.find(params[:id])
+    end
+
+    # Checks if a user wants to access his cart or someone elses
+    def check_session_id
+      unless @cart.id == session[:cart_id]
+        redirect_to store_index_url, notice: 'Invalid cart'
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
