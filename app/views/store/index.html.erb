@@ -26,8 +26,10 @@
           </p>
           <div class="price">
             <%= number_to_pln_currency(product.price) %>
-            <%= button_to 'Add to Cart', line_items_path(product_id: product) %>
-          </div> 
+          </div>
+          <p>
+          <%= button_to 'Add to Cart', line_items_path(product_id: product) %>
+          <p>
         </li>
       <% end %>
     <% end %>

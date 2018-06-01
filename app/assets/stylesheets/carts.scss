@@ -10,7 +10,7 @@
       &.quantity {
         whitespace: nowrap;
         &::after {
-          content: " x";
+          content: "x";
         }
       }
       &.price {
