@@ -8,13 +8,7 @@
   <h2>Cart</h2>
   <table>
     <tbody>
-      <% @cart.line_items.each do |line_item| %>
-        <tr>
-          <td class="quantity"><%= line_item.quantity %></td>
-          <td><%= line_item.product.title %></td>
-          <td class="price"><%= number_to_pln_currency(line_item.total_price) %></td>
-        </tr>
-      <% end %>
+      <%= render(@cart.line_items) %>
     </tbody>
     <tfoot>
       <tr>
