@@ -21,7 +21,7 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
     end
 
     follow_redirect!
-    assert_template 'carts/show'
+    assert_template 'store/index'
   end
 
   test "should show line_item" do
