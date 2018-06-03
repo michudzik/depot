@@ -17,5 +17,5 @@
       </tr>
     </tfoot>
   </table>
-  <%= button_to 'Reset cart', cart, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= button_to 'Reset cart', cart, method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>
 </article>
