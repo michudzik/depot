@@ -7,7 +7,7 @@ class StoreController < ApplicationController
 
   def index
     @products = Product.order(:title)
-    @counter = session[:counter]
+    @counter = session[:counter] if session[:counter] > 5
   end
   
 end
