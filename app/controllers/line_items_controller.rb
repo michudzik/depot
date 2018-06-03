@@ -2,7 +2,7 @@ class LineItemsController < ApplicationController
   include CurrentCart
   include SessionCounter
 
-  before_action :set_cart, only: [:create]
+  before_action :set_cart
   before_action :reset_counter, only: [:create]
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
 
@@ -63,9 +63,22 @@ class LineItemsController < ApplicationController
   def destroy
     @line_item.destroy
     respond_to do |format|
-      format.html { redirect_to line_items_url, notice: 'Line item was successfully destroyed.' }
+      format.html { redirect_to store_index_url, notice: 'Line item was successfully destroyed.' }
       #format.html { redirect_to @cart, notice: 'Line item was successfully destroyed' }
       format.json { head :no_content }
+    end
+  end
+
+  def decrement
+    @line_item = LineItem.find(params[:id])
+    @line_item.quantity -= 1
+    if @line_item.quantity == 0
+      @line_item.destroy
+    elsif @line_item.save
+      respond_to do |format|
+        format.html { redirect_to store_index_url }
+        format.js
+      end
     end
   end
 
