@@ -3,7 +3,7 @@
 ## Getting started
 Clone the repository
 ```
-$ git clone https://github.com/michudzik/depot <destination>
+$ git clone https://github.com/michudzik/depot.git <destination>
 ```
 
 Install required gems
