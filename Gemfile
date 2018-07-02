@@ -5,7 +5,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
+# ReactJS - dynamic forms
+gem 'webpacker', '~> 3.0'
+# XML serializer
 gem 'activemodel-serializers-xml'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
