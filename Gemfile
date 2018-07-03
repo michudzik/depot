@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# Using has_secure_password
+gem 'bcrypt', '~> 3.1.7'
 # ReactJS - dynamic forms
 gem 'webpacker', '~> 3.0'
 # XML serializer
