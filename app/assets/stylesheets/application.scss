@@ -61,6 +61,24 @@ body {
         @media (min-width: 30em) {
           text-align: left; // Left Align nav on desktop client
         }
+        .logged_in_nav {
+          border-top: solid thin #bfb;
+          padding: 0.35em 0;
+          margin-top: 0.35em;
+          input[type="submit"] {
+            background: none;
+            border: none;
+            color: #bfb;
+            font-size: 1em;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            margin: 0;
+            padding: 0;
+            &:hover {
+              color: white;
+            }
+          }
+        }
         div#cart {
           article {
             h2 {
