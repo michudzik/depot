@@ -49,6 +49,34 @@ en:
       empty:      "Reset cart"
       checkout:   "Checkout"
 
+  line_items:
+    line_item:
+      delete_item_html:    "Delete item"
+      delete_html:         "Delete"
+
+  orders:
+    new:
+      legend:               "Please enter your details"
+    form:
+      name:                 "Name:"
+      address_html:         "Address:"
+      email:                "Email:"
+      submit:               "Place order"
+      pay_type:             "Pay with:"
+      pay_prompt_html:      "Select a payment method:"
+      pay_types:
+        check:              "Check"
+        credit_card:        "Credit card"
+        purchase_order:     "Purchase order"
+      check_pay_type:
+        routing_number:     "Routing #"
+        account_number:     "Account #"
+      credit_card_pay_type:
+        cc_number:          "CC #"
+        expiration_date:    "Expiration date"
+      purchase_order_pay_type:
+        po_number:          "PO #"
+
   number:
     currency:
       format:

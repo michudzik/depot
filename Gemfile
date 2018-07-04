@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# Internalization
+gem 'i18n-js'
 # Using has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 # ReactJS - dynamic forms
