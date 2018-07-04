@@ -21,10 +21,10 @@
         <% end %>
         
         <ul>
-          <li><%= link_to 'Home', '#' %></li>
-          <li><%= link_to 'Questions', '#' %></li>
-          <li><%= link_to 'News', '#' %></li>
-          <li><%= link_to 'Contact', '#' %></li>
+          <li><%= link_to t('.home'), '#' %></li>
+          <li><%= link_to t('.questions'), '#' %></li>
+          <li><%= link_to t('.news'), '#' %></li>
+          <li><%= link_to t('.contact'), '#' %></li>
         </ul>
 
         <% if session[:user_id] %>

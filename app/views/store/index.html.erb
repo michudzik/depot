@@ -4,7 +4,7 @@
   </aside>
 <% end %>
 
-<h1>Catalogue</h1>
+<h1><%= t('.title_html') %></h1>
 
 <h3>
   <% if @counter %>
@@ -28,7 +28,7 @@
             <%= number_to_pln_currency(product.price) %>
           </div>
           <p>
-          <%= button_to 'Add to Cart', line_items_path(product_id: product), remote: true %>
+          <%= button_to t('.add_html'), line_items_path(product_id: product, locale: I18n.locale), remote: true %>
           <p>
         </li>
       <% end %>
