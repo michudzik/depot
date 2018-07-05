@@ -11,6 +11,11 @@ Install required gems
 $ bundle install
 ```
 
+Update yarn packages
+```
+$ yarn install
+```
+
 Migrate the database
 ```
 $ rails db:migrate
