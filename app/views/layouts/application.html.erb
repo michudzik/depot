@@ -12,6 +12,11 @@
   </head>
   <body>
     <header class="main">
+      <aside>
+        <%= form_tag store_index_path, class: 'locale' do %>
+          <%= select_tag 'set_locale', options_for_select(LANGUAGES, I18n.locale.to_s), onchange: 'this.form.submit()' %>
+        <% end %>
+      </aside>
       <%= image_tag 'logo.png', alt: 'The pragmatic bookshelf' %>
       <h1><%= @page_title %></h1>
     </header>

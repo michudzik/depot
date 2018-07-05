@@ -8,8 +8,12 @@ class StoreController < ApplicationController
   before_action :set_counter, only: [:index]
 
   def index
-    @products = Product.order(:title)
-    @counter = session[:counter] if session[:counter] > 5
+    if params[:set_locale]
+      redirect_to store_index_url(locale: params[:set_locale])
+    else
+      @products = Product.order(:title)
+      @counter = session[:counter] if session[:counter] > 5
+    end
   end
   
 end
