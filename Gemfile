@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'bundler-audit'
 # Internalization
 gem 'i18n-js'
 # Using has_secure_password
